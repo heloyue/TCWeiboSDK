@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+
+
 /**
  * @brief 错误范围，用来标识错误是接口返回的还是SDK返回的。
  */
@@ -102,6 +104,15 @@ typedef enum{
  */
 #define TCWBAuthCheckServer  1
 
+
+/**
+ * @brief 日志等级定义
+ */
+typedef enum {
+    eLogLevelError = 0,
+    eLogLevelInfo  = 1,
+    eLogLevelDebug = 2
+}eLogLevel;
 
 /**
  *  @brief      api对象定义文件

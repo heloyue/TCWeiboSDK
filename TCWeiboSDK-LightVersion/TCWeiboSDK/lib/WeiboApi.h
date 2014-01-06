@@ -23,8 +23,6 @@
  *  @note   SDk默认写本地缓存，第一次授权完成后，写入缓存。后续不需要再次进行授权，如需判断授权是否有效请@see checkAuthValid:
  *  @note   使用苹果系统SSO授权时，不提供获取token功能，其他两种授权方式时，请获取请调用getToken 获取授权票据。@see getToken:
  *  @note   客户端SSO授权时，所显示应用icon，是SDK从第三方应用工程plist种获取，请确保工程icon设置方式是标准设置方式。
- *  @note   sdk中使用了Accounts, SocialFramework 两个系统库，需要在工程中一并导入。
- 
  */
 @interface WeiboApi : NSObject
 {
@@ -126,6 +124,12 @@
 - (void)checkAuthValid:(int)theCheckAuthFlag andDelegete:(id)theDelegete;
 
 
+/**
+ *  @brief  设置日志等级，
+ *  @param  INPUT loglevel 日志等级（共有3个等级， eLogLevelError，eLogLevelInfo，eLogLevelDebug），默认等级为 eLogLevelError
+ *  @return 无返回
+ */
+-(void)setLogLevel:(int)loglevel;
 
 /**
  * @brief  处理微博客户端唤回后的回调数据
